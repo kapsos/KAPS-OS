@@ -1,3 +1,4 @@
 http://puppylinux.org/main/tutorials/LucidPuppyInstallationTutorial-English.pdf
 
-Seriously...
+Note this is an improvement upon LiLi Live USB Creator due to reliable persistence and ability to boot from old computers
+Size is also greatly reduced from the typical 5 GB+ space needed for Ubuntu systems. This will be important later on, when we must allocated a minimum of 4 GB for a spare partition to mount Linux file system.
