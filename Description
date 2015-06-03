@@ -37,6 +37,70 @@ Continuing with using Ubuntu because those who plan on using USB can successfull
 Other members lack a consistent access to a computer to work on.
 
 04/30/15
-BEFORE TOMORROW EVERYONE SHOULD GO ON LFS AND COMPILE A HOST PREREQUISITE SCRIPT FOR REQUIRED PACKAGES AND NEEDED LIBRARY CONSISTENCY
+The USB I'm working on lacks all files, it is possible we do not have a full version of Ubuntu installed
+
+BEFORE TOMORROW EVERYONE WHO IS STILL WORKING ON A USB SHOULD GO ON LFS AND COMPILE A HOST PREREQUISITE SCRIPT FOR REQUIRED PACKAGES AND NEEDED LIBRARY CONSISTENCY
+REPORT YOUR RESULTS TOMORROW
 
 http://www.linuxfromscratch.org/lfs/view/stable/prologue/hostreqs.html
+
+04/31/15
+If your USB has a working list of sources in your /etc/apt/sources.list, you should be able to simply enter the commands in terminal : 
+"sudo apt-get update"
+"sudo apt-get upgrade"
+This should at least add a few of the missing packages (internet is required for this task)
+Currently researching how Ubuntu repositories work
+
+05/03/15
+Sources list can be edited from terminal using :
+"sudo gedit /etc/apt/sources.list"
+
+Once opened in edit mode paste the following text : 
+###### Ubuntu Main Repos
+deb http://ca.archive.ubuntu.com/ubuntu/ trusty main 
+deb-src http://ca.archive.ubuntu.com/ubuntu/ trusty main 
+
+###### Ubuntu Update Repos
+deb http://ca.archive.ubuntu.com/ubuntu/ trusty-updates main 
+deb-src http://ca.archive.ubuntu.com/ubuntu/ trusty-updates main 
+
+Then press ctrl + designated key shown on screen to "write in" and then another ctrl + designated key to exit
+
+Now you should use the update upgrade commands from before to available packages from repository and then download them.
+
+Also note that large chunks of text for testing system requirements can be recalled by simply typing :
+"bash version-check.sh"
+The above works because we created a bash script on "my computer" folder of Ubuntu using that text
+
+05/10/15
+I found how remaining packages can be installed if they are missing after the aforementioned methods :
+"sudo apt-cache policy <packageName>"
+
+If a set of numbers is shown after "versions" it means that the package is already installed and just not detected (which means you may move on) or it is an outdated version.
+
+If you must install the package, look for an available version proceeding the text "Version Table", and copy that bolded address EXACTLY into command :
+"sudo apt-get install <address here>"
+
+Ask me for help if you're notified that the package "failed to fetch from ... (a html address)"
+
+Now when you are successful in meeting the requirements from version-check script, research on partitioning and mounting filesystem, and we'll discuss
+
+05/16/15
+I should have thought of this before but THE USB YOU ARE CURRENTLY WORKING ON CANNOT BE UNMOUNTED WHILE BOOTING UBUNTU FROM IT.
+Windows cannot detect and access independently boot-capable USBs' partitions.
+Therefore make sure your USB has enough 4 GB + even with maximum persistence on it (due to persistence partition not being able to be altered from lack of unmounting option)
+
+USB must be reinstalled if space is not sufficient, another option is to run GParted (Universal Linux Partitioning System) on another USB, boot from that USB, and then partition your current one from that new USB's Ubuntu
+
+URGENT : Sowmy please prepare a 16 GB + USB with Ubuntu on it so I can use the GParted option of partitioning
+
+05/27/15
+Partitioning space availability is large enough but memory allocation is extremely small (MB) due to starting block and ending block (gradient between the two creates physical space from USB allocated) being automatically assigned nearly same values
+
+Did some research on this and have yet to encounter someone else facing this problem
+Likely that it's faulty construction of partition due to lack of privilleges for one USB to access other
+
+Another partitioning from terminal or other method that does not require operating on HDD (since we are most likely all running Windows, which cannot access bootables) must be found ASAP
+
+06/02/15
+Since our USB Ubuntus only require libraries and a working terminal, DELETE ALL UNNECESSARY DEFAULT PROGRAMS IF YOU ARE SUBMITTING YOURS to reduce lag should he test bash scripts.
