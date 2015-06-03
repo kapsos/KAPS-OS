@@ -1,4 +1,42 @@
 # KAPS-OS
-A Linux based operating system.
-Currently in development
-K.
+A Linux based operating system progress : 
+
+04/04/15
+Python requires hard drive to pass along information to it in order to access libraries
+Therefore when there is no accessible information (during Booting) Python cannot communicate with BIOS
+
+Python CANNOT be used as a language for our OS
+
+04/10/15
+Began Linux From Scratch book
+
+04/12/15
+Research indicates that Linux based operating system is only option to begin LFS installation
+Storage for system is where LFS system will be located, due to installation system transfering all needed packages (think Inheritance)
+Windows and MAC OS MAY be used (with a virtualized Linux system) if installing barebones Linux system directly to computer
+But virtualization is impossible if installing to bootable USB
+
+A person should responsible for insuring that everyone has USBs that have persistence and a Linux system WHILE having 4 GB + of extra space
+
+04/16/15
+Installed Ubuntu on a live USB
+NOTE : MORE TESTING (on other computer) SHOULD BE DONE ON USB TO VERIFY IT'S INSTALLED ON SYSTEM RATHER THAN COMPUTER 
+
+Afterwards Every person should test this USB on their computer to see if it's bootable and has persistence
+Sowmy currently has USB
+
+04/21/15
+USBs that have working persistence seem to not boot on newer versions of Windows
+
+MUST decide if a new Linux based OS should be used as installation system instead
+a new file is posted with installation to an alternative Linux system
+Everyone should install that ASAP to see if it's an improvement from Ubuntu
+
+04/24/15
+Continuing with using Ubuntu because those who plan on using USB can successfully boot using older OS's. 
+Other members lack a consistent access to a computer to work on.
+
+04/30/15
+BEFORE TOMORROW EVERYONE SHOULD GO ON LFS AND COMPILE A HOST PREREQUISITE SCRIPT FOR REQUIRED PACKAGES AND NEEDED LIBRARY CONSISTENCY
+
+http://www.linuxfromscratch.org/lfs/view/stable/prologue/hostreqs.html
